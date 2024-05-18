@@ -1,0 +1,76 @@
+/* index.css */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  text-align: center; /* Center text horizontally */
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.Nav {
+  width: 100%;
+}
+
+.Search {
+  margin-top: 20px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+input[type='text'] {
+  padding: 10px;
+  font-size: 16px;
+  width: 300px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.BookResults {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.BookItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: left; /* Ensure text is left-aligned within the book item */
+  width: 100%; /* Make sure the items take full width of container */
+  max-width: 600px; /* Set a maximum width for better readability */
+  height: 200px; /* Set a fixed height for all book items */
+  box-sizing: border-box; /* Include padding and border in the height */
+}
+
+.BookThumbnail {
+  margin-right: 20px; /* Space between the image and book info */
+  max-height: 100px; /* Limit the image height */
+}
+
+.BookInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center the text vertically */
+  overflow: hidden; /* Ensure overflow text does not expand the container */
+  height: 100%; /* Make sure the height is 100% of the parent container */
+}

@@ -1,0 +1,27 @@
+/* NavBar.css */
+
+#NavBar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #333;
+    padding: 20px 60px;
+    color: white;
+  }
+  
+  #NavBar div {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  #NavBar div:hover {
+    background-color: #555;
+  }
+
+  #Search {
+    font-size: 1.5em;
+    margin-right: 20px;
+  }
+  #Book-Lists {
+    font-size: 1.5em;
+  }
