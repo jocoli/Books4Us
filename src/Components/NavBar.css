@@ -1,27 +1,27 @@
 /* NavBar.css */
 
 #NavBar {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    background-color: #333;
-    padding: 20px 60px;
-    color: white;
-  }
-  
-  #NavBar div {
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  #NavBar div:hover {
-    background-color: #555;
-  }
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #333;
+  padding: 20px 60px;
+  color: white;
+}
 
-  #Search {
-    font-size: 1.5em;
-    margin-right: 20px;
-  }
-  #Book-Lists {
-    font-size: 1.5em;
-  }
+.NavLink {
+  padding: 10px;
+  cursor: pointer;
+  font-size: 1.5em;
+  margin-right: 20px;
+  text-decoration: none; /* Remove underline from links */
+  color: white; /* Ensure link text color is white */
+}
+
+.NavLink:hover {
+  background-color: #555;
+}
+
+#Book-Lists {
+  margin-right: 0; /* Remove margin from the last element */
+}
