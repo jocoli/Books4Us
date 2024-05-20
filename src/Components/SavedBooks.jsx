@@ -38,9 +38,9 @@ const SavedBooks = () => {
               />
             )}
             <div className="BookInfo">
-              <h2>Title: {book.volumeInfo.title}</h2>
-              <p>Authors: {book.volumeInfo.authors?.join(', ')}</p>
-              <p>Date: {book.volumeInfo.publishedDate}</p>
+              <h2>{book.volumeInfo.title}</h2>
+              <p>{book.volumeInfo.authors?.join(', ')}</p>
+              <p>{book.volumeInfo.publishedDate}</p>
               <Link to={`/book/${book.id}`}>View Details</Link>
             </div>
           </div>
