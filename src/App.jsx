@@ -3,6 +3,7 @@ import { useRoutes, Routes, Route } from 'react-router-dom';
 import NavBar from './Components/NavBar';
 import BookDetails from './Components/BookDetails';
 import Search from './Components/Search';
+import SavedBooks from './Components/SavedBooks';
 
 function App() {
 
@@ -15,6 +16,10 @@ function App() {
       path:"/book/:id",
       element: <BookDetails />
 
+    },
+    {
+      path:"/savedbooks",
+      element: <SavedBooks />
     }
   ]);
 

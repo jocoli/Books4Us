@@ -58,7 +58,7 @@ button {
   text-align: left; /* Ensure text is left-aligned within the book item */
   width: 100%; /* Make sure the items take full width of container */
   max-width: 600px; /* Set a maximum width for better readability */
-  height: 200px; /* Set a fixed height for all book items */
+  height: 250px; /* Set a fixed height for all book items */
   box-sizing: border-box; /* Include padding and border in the height */
 }
 

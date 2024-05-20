@@ -22,6 +22,7 @@
   background-color: #555;
 }
 
-#Book-Lists {
-  margin-right: 0; /* Remove margin from the last element */
+/* Add a new class for the Book Lists link */
+.SavedBooksLink {
+  font-size: 1.5em; /* Set font size for Book Lists link */
 }

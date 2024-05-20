@@ -2,12 +2,31 @@
 import express from 'express';
 import cors from 'cors';
 import fetch from 'node-fetch';
+import { MongoClient, ServerApiVersion } from 'mongodb';
 
 // Create Express instance
 const app = express();
 
 // Define port
 const port = process.env.PORT || 3001;
+
+// MongoDB
+const uri = "mongodb+srv://jlinang06:7PvQBMf28E2Hj1FH@lomi.7ocme0j.mongodb.net/?retryWrites=true&w=majority&appName=Lomi";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+await client.connect();
+
+// Connect to MongoDB
+async function connectToMongoDB(){
+    try{
+        await client.connect();
+        console.log("Connected to MongoDB");
+    }
+    catch (error) {
+        console.error("Error connecting to MongoDB:", error);
+    }
+}
+
+connectToMongoDB();
 
 // Middleware
 app.use(cors());
@@ -54,6 +73,43 @@ app.get('/api/book/:id', async (req, res) => {
         console.error('Error fetching data from Google Books API:', error);
         res.status(500).send('Error fetching data from Google Books API');
     }
+});
+
+// Route to fetch saved books
+app.get('/api/saved-books', async (req, res) => {
+    try {
+        const db = await client.db("SavedBooks");
+        const collection = db.collection("bookCollection");
+        const savedBooks = await collection.find({}).toArray();
+        res.json(savedBooks);
+    }
+    catch(error){
+        console.error('Error fetching saved books from MongoDB', error);
+        res.status(500).send('Error fetching saved books from MongoDB');
+    }
+})
+
+// Add book to SavedBooks database
+app.post('/api/books', async (req,res) => {
+    const book = req.body;
+
+    try {
+        const db = client.db("SavedBooks");
+        const collection = db.collection("bookCollection");
+        const result = await collection.insertOne(book);
+        console.log(`Book added with ID: ${result.insertedId}`);
+        res.status(201).json({ message: 'Book added successfully', bookId: result.insertedId });
+    } catch (error) {
+        console.error('Error adding book to MongoDB:', error);
+        res.status(500).send('Error adding book to MongoDB');
+    }
+})
+
+// Close MongoDB connection when the server shuts down
+process.on('SIGINT', async () => {
+    await client.close();
+    console.log("MongoDB connection closed");
+    process.exit(0);
 });
 
 

@@ -1,0 +1,20 @@
+/* SavedBooks.css */
+
+.Saved-Books {
+    text-align: center; /* Center-align the content */
+  }
+  
+  .create-button {
+    margin-top: 20px; /* Add top margin for spacing */
+    padding: 10px 20px; /* Add padding for button */
+    font-size: 16px; /* Set font size */
+    background-color: #007bff; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove button border */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    cursor: pointer; /* Change cursor on hover */
+  }
+  
+  .create-button:hover {
+    background-color: #0056b3; /* Darker background color on hover */
+  }

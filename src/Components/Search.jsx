@@ -35,6 +35,28 @@ const Search = () => {
     setStartIndex((startIndex) => startIndex - maxResults);
   };
 
+  const handleSaveBook = async(book) => {
+    try {
+        const response = await fetch('/api/books', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body:JSON.stringify(book),
+        });
+        if(response.ok){
+            console.log('Book saved successfully');
+        }
+        else{
+            console.error('Failed to save book:', response.statusText);
+        }
+    }
+    catch(error){
+        console.error("Error saving book:", error);
+    }
+  };
+
+
   return (
     <div className="Search">
       <h1>Books4Us</h1>
@@ -63,6 +85,10 @@ const Search = () => {
               <p>{book.volumeInfo.authors?.join(', ')}</p>
               <p>{book.volumeInfo.publishedDate}</p>
               <Link to={`/book/${book.id}`}>View Details</Link>
+              
+            </div>
+            <div className="SaveBook">
+                <button onClick={() => handleSaveBook(book)}>Save Book</button>
             </div>
           </div>
         ))}
