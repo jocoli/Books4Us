@@ -30,18 +30,18 @@ const SavedBooks = () => {
       <div className="BookResults">
         {savedBooks.map((book) => (
           <div key={book._id} className="BookItem">
-            {book.smallThumbnail && (
+            {book.volumeInfo.imageLinks?.smallThumbnail && (
               <img
-                src={book.smallThumbnail}
-                alt={book.title}
+                src={book.volumeInfo.imageLinks.smallThumbnail}
+                alt={book.volumeInfo.title}
                 className="BookThumbnail"
               />
             )}
             <div className="BookInfo">
-              <h2>{book.title}</h2>
-              <p>{book.authors?.join(', ')}</p>
-              <p>{book.publishedDate}</p>
-              <Link to={`/book/${book.bookID}`}>View Details</Link>
+              <h2>Title: {book.volumeInfo.title}</h2>
+              <p>Authors: {book.volumeInfo.authors?.join(', ')}</p>
+              <p>Date: {book.volumeInfo.publishedDate}</p>
+              <Link to={`/book/${book.id}`}>View Details</Link>
             </div>
           </div>
         ))}
