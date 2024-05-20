@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import './BookDetails.css'; // Import the CSS file
 
 const BookDetails = () => {
-  const { id } = useParams(); // Get the book ID from URL parameters
+const { id } = useParams(); // Get the book ID from URL parameters
   const [bookDetails, setBookDetails] = useState(null); // State to store book details
   const [savedBooks, setSavedBooks] = useState([]); // State to store saved books
   const [saveMessage, setSaveMessage] = useState(null); // State to store save message
@@ -89,7 +89,7 @@ const BookDetails = () => {
         <p>Author(s): {volumeInfo.authors?.join(', ') || 'N/A'}</p>
         <p>Description: {decodedDescription ? <div dangerouslySetInnerHTML={{ __html: decodedDescription }} /> : 'N/A'}</p>
         <p>Page Count: {volumeInfo.pageCount || 'N/A'}</p>
-        <p>Ratings: {volumeInfo.averageRating ? `${volumeInfo.averageRating}/5 (${volumeInfo.ratingsCount} ratings)` : 'N/A'}</p>
+        <p>Ratings: {volumeInfo.averageRating ? `${volumeInfo.averageRating}/5` : 'N/A'}</p>
         <p>Number of Ratings: {volumeInfo.ratingsCount || 'N/A'}</p>
         <p>Preview: {volumeInfo.previewLink ? <a href={volumeInfo.previewLink}>Preview Link</a> : 'N/A'}</p>
         <p>Buy: {volumeInfo.buyLink ? <a href={volumeInfo.buyLink}>Buy Link</a> : 'N/A'}</p>
