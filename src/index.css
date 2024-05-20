@@ -74,3 +74,41 @@ button {
   overflow: hidden; /* Ensure overflow text does not expand the container */
   height: 100%; /* Make sure the height is 100% of the parent container */
 }
+
+.SaveBook button {
+  background-color: #4CAF50; /* Green background */
+  border: none; /* Remove borders */
+  color: white; /* White text */
+  padding: 12px 24px; /* Some padding */
+  text-align: center; /* Centered text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Get it to display as inline-block */
+  font-size: 16px; /* Increase font size */
+  margin: 4px 2px; /* Some margin */
+  cursor: pointer; /* Pointer/hand icon */
+  border-radius: 12px; /* Rounded corners */
+  transition-duration: 0.4s; /* Transition effects */
+}
+
+.SaveBook button:hover {
+  background-color: white; /* White background on hover */
+  color: #4CAF50; /* Green text on hover */
+  border: 2px solid #4CAF50; /* Green border on hover */
+}
+
+.SaveBook button:disabled {
+  background-color: #e7e7e7; /* Gray background */
+  color: #aaa; /* Gray text */
+  cursor: not-allowed; /* Not-allowed cursor */
+}
+
+.SaveBook button:disabled:hover {
+  background-color: #e7e7e7; /* Keep gray background on hover */
+  color: #aaa; /* Keep gray text on hover */
+}
+
+.SaveBook p {
+  margin-top: 10px; /* Space above the message */
+  color: red; /* Message color */
+  font-size: 14px; /* Message font size */
+}
