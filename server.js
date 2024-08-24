@@ -11,7 +11,7 @@ const app = express();
 const port = process.env.PORT || 3001;
 
 // MongoDB
-const uri = "mongodb+srv://jlinang06:7PvQBMf28E2Hj1FH@lomi.7ocme0j.mongodb.net/?retryWrites=true&w=majority&appName=Lomi";
+const uri = "redacted";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 await client.connect();
 
